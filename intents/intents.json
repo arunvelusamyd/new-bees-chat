@@ -1,0 +1,14 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey there"],
+      "responses": ["Hello! How can I assist you today?"]
+    },
+    {
+      "tag": "leave_policy",
+      "patterns": ["What is the leave policy?", "Tell me about vacation days"],
+      "responses": ["You can find the leave policy in the HR portal under 'Policies'."]
+    }
+  ]
+}
