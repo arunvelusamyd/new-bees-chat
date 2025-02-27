@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "name": "restaurant-reviews-croissant",
+    "description": "A sample dataset of restaurant reviews in Croissant format.",
+    "version": "1.0.0"
+  },
+  "splits": {
+    "train": "../firstcroissant/restaurant_reviews_train.jsonl",
+    "validation": "../firstcroissant/restaurant_reviews_val.jsonl",
+    "test": "../firstcroissant/restaurant_reviews_test.jsonl"
+  }
+}
