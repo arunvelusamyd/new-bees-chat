@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input { width: 300px; padding: 10px; margin: 10px; }
+        button { padding: 10px 20px; cursor: pointer; }
+        #response { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Internal Chatbot</h2>
+    <input type="text" id="question" placeholder="Ask a question...">
+    <button onclick="askChatbot()">Ask</button>
+    <p id="response"></p>
+
+    <script>
+        async function askChatbot() {
+            const question = document.getElementById("question").value;
+            const response = await fetch("http://127.0.0.1:8000/ask", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ question })
+            });
+            const data = await response.json();
+            document.getElementById("response").innerText = "Bot: " + data.answer;
+        }
+    </script>
+</body>
+</html>
